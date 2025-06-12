@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8">
+  <title>Dia dos Namorados</title>
+</head>
+<body>
+
+  <h1>Você aceita namorar cmg?</h1>
+  <h6>eu sei que você vai entender</h6>
+  <div class="container">
+    <button id="sim">Sim</button>
+    <button id="nao">Não</button>
+  </div>
+
+  <script>
+    const btnNao = document.getElementById('nao');
+    const btnSim = document.getElementById('sim');
+
+    btnSim.addEventListener('click', () => {
+      window.location.href = 'certeza.html'; 
+    });
+
+    btnNao.addEventListener('click', () => {
+      const container = document.querySelector('.container');
+      const maxX = container.clientWidth - btnNao.offsetWidth;
+      const maxY = container.clientHeight - btnNao.offsetHeight;
+
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      btnNao.style.left = `${randomX}px`;
+      btnNao.style.top = `${randomY}px`;
+    });
+  </script>
+
+</body>
+</html>
